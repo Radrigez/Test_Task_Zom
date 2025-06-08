@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [SelectionBase]
 public class Player : MonoBehaviour
@@ -13,8 +14,9 @@ public class Player : MonoBehaviour
    [SerializeField] private float speed = 10f;
    private float minSpeed = .1f;
    
-   public GameObject lounchPoin;
-   public GameObject bulletPrefab;
+  public GameObject bulletPrefab;
+  public Transform bulletPoint;
+  private float speedBullet = 45f;
    
    private void Awake()
    {
@@ -25,7 +27,6 @@ public class Player : MonoBehaviour
    private void Update()
    {
       inputVector = GameInput.Instance.GetMovementVector();
-
       Shot();
    }
 
@@ -47,9 +48,14 @@ public class Player : MonoBehaviour
    {
       if (Input.GetKeyDown(KeyCode.Mouse0))
       {
-         Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+         Vector2 mousePosition = Input.mousePosition;
+         Vector2 worldPoint = Camera.main.ScreenToWorldPoint(new Vector2(mousePosition.x, mousePosition.y));
+         GameObject Bull = Instantiate(bulletPrefab, bulletPoint.transform.position, Quaternion.identity);
+         Vector3 direction = (worldPoint - rb.position).normalized;
+         Bull.GetComponent<Rigidbody2D>().AddForce(direction * speedBullet);
       }
    }
+   
    
    public bool IsRunning()
    {
@@ -61,5 +67,12 @@ public class Player : MonoBehaviour
       Vector3 vectorPlayerPosition = Camera.main.WorldToScreenPoint(transform.position);
       return vectorPlayerPosition;
    }
-  
+
+   private void OnCollisionEnter2D(Collision2D collision)
+   {
+      if (collision.gameObject.CompareTag("Enemy"))
+      {
+         GetComponent<HPSystem>().TakeDamage(10);
+      }
+   }
 }
