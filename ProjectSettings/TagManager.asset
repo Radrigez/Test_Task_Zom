@@ -6,14 +6,15 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - Item
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - 1
   - Water
   - UI
-  - 
+  - Items
   - 
   - 
   - 

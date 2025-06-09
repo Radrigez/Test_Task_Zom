@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [SelectionBase]
 public class Player : MonoBehaviour
@@ -16,8 +17,10 @@ public class Player : MonoBehaviour
    
   public GameObject bulletPrefab;
   public Transform bulletPoint;
-  private float speedBullet = 45f;
-   
+  private float speedBullet = .1f;
+  
+  public Text armorText;
+  
    private void Awake()
    {
       Instance = this;
@@ -43,7 +46,6 @@ public class Player : MonoBehaviour
          isRuning = false;
       }
    }
-
    public void Shot()
    {
       if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -53,9 +55,9 @@ public class Player : MonoBehaviour
          GameObject Bull = Instantiate(bulletPrefab, bulletPoint.transform.position, Quaternion.identity);
          Vector3 direction = (worldPoint - rb.position).normalized;
          Bull.GetComponent<Rigidbody2D>().AddForce(direction * speedBullet);
+      
       }
    }
-   
    
    public bool IsRunning()
    {
