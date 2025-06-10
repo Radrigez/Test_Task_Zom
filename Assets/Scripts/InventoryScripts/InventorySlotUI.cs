@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -54,7 +52,7 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
         else if (eventData.button == PointerEventData.InputButton.Left)
         {
             deleteButton.SetActive(!deleteButton.activeSelf);
-            UseButton.SetActive(!UseButton.activeSelf);
+            //UseButton.SetActive(!UseButton.activeSelf);
         }
     }
     

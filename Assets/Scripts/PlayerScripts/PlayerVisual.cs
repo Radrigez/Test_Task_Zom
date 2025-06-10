@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerVisual : MonoBehaviour
@@ -19,7 +16,7 @@ public class PlayerVisual : MonoBehaviour
 
    private void Update()
    {
-       anim.SetBool( IS_RUNING, Player.Instance.IsRunning());
+//       anim.SetBool( IS_RUNING, Player.Instance.IsRunning());
        PlayerDirection();
    }
 

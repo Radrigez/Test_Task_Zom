@@ -1061,6 +1061,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5972087526906239289, guid: c044a6f98934a084a842e642694ab11d, type: 3}
   bulletPoint: {fileID: 5417455783676073083}
   armorText: {fileID: 0}
+  BulletPoofCloakItem: {fileID: 0}
+  BulletproofCloakWrist: {fileID: 0}
+  BulletproofCloakWrist2: {fileID: 0}
+  MilitaryHelmetItem: {fileID: 0}
 --- !u!114 &5417455785447162068
 MonoBehaviour:
   m_ObjectHideFlags: 0

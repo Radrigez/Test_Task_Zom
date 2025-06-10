@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 [SelectionBase]
@@ -35,6 +33,7 @@ public class Player : MonoBehaviour
    private void Update()
    {
       inputVector = GameInput.Instance.GetMovementVector();
+      Shot();
    }
 
    private void FixedUpdate()
@@ -52,15 +51,14 @@ public class Player : MonoBehaviour
    }
    public void Shot()
    {
-      //if (Input.GetKeyDown(KeyCode.Mouse0))
-     // {
+      if (Input.GetKeyDown(KeyCode.Mouse0))
+      {
          Vector2 mousePosition = Input.mousePosition;
          Vector2 worldPoint = Camera.main.ScreenToWorldPoint(new Vector2(mousePosition.x, mousePosition.y));
          GameObject Bull = Instantiate(bulletPrefab, bulletPoint.transform.position, Quaternion.identity);
          Vector3 direction = (worldPoint - rb.position).normalized;
          Bull.GetComponent<Rigidbody2D>().AddForce(direction * speedBullet);
-      
-     // }
+      }
    }
    
    public bool IsRunning()

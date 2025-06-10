@@ -18,6 +18,7 @@ public class InventoryUI : MonoBehaviour
             slots[i].slotIndex = i;
         }
         UpdateUI();
+        Time.timeScale = 0;
     }
 
     void Update()
@@ -25,6 +26,7 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
+            Time.timeScale = 1;
         }
         UpdateUI();
     }
