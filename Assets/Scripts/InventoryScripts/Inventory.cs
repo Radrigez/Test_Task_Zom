@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Inventory : MonoBehaviour
    
    public delegate void OnItemChanged();
    public OnItemChanged onItemChangedCallBack;
+
+   public Button shootButton;
    
    void Awake()
    {

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -10,6 +11,8 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
     public Text amountText = null;
     public int slotIndex;
     public GameObject deleteButton;
+    public GameObject UseButton;
+
     
     public void AddItem(Item newItem, int amount)
     {
@@ -41,16 +44,17 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
         icon.enabled = false;
         amountText.text = "";
     }
-
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             Inventory.instance.UseItem(slotIndex);
         }
+        
         else if (eventData.button == PointerEventData.InputButton.Left)
         {
             deleteButton.SetActive(!deleteButton.activeSelf);
+            UseButton.SetActive(!UseButton.activeSelf);
         }
     }
     
@@ -60,7 +64,16 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler
         deleteButton.SetActive(false);
         icon.sprite = null;
         icon.enabled = false;
-        
+        amountText.text = " ";
+    }
+    public void OnUseButton()
+    {
+        Inventory.instance.RemoveItem(slotIndex);
+        UseButton.SetActive(false);
+        icon.sprite = null;
+        icon.enabled = false;
+        amountText.text = " ";
+        amountText.text = Player.Instance.armorText.ToString();
     }
 
    /*

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3f0138cd9e07674ab602672d263ef8f, type: 3}
-  m_Name: ammunition
+  m_Script: {fileID: 11500000, guid: c0550441e4872fa45b1225dc5c0b9c2f, type: 3}
+  m_Name: BulletproofCloakWrist2
   m_EditorClassIdentifier: 
-  itemName: ammunition
-  icon: {fileID: 21300000, guid: d45f0cae013abb84688afe6e4bc52845, type: 3}
-  maxStack: 3
+  itemName: BulletproofCloakWrist
+  icon: {fileID: 21300000, guid: 0e06a0418c1fb7a4abedb03ea9c66359, type: 3}
+  maxStack: -6
   isConsinable: 1

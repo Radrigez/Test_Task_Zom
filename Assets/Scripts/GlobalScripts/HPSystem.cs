@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class HPSystem : MonoBehaviour
 {
-    private int maxHP = 100;
-    private int currentHP;
-    public Slider HPBar;
-
+    public GameObject item1;
+    public GameObject item2;
+    public GameObject item3;
+    
+    public static HPSystem instance {get; private set;}
+    public float maxHP = 100;
+    public float currentHP;
+    
+    private Vector2 takeDamage;
     void Start()
     {
         currentHP = maxHP;
         UpdateHpBar();
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHP -= damage;
         if (currentHP <= 0)
@@ -25,7 +30,7 @@ public class HPSystem : MonoBehaviour
     }
     public void UpdateHpBar()
     {
-        HPBar.value = currentHP;
+       // HPBar.value = currentHP;
     }
     public void Die()
     {

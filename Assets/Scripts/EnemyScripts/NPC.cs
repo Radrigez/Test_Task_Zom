@@ -15,6 +15,7 @@ public class NPC : MonoBehaviour
       if (collision.gameObject.CompareTag("Bullet"))
       {
          GetComponent<HPSystem>().TakeDamage(10);
+         GetComponent<HpBar>().TakeDamage(10);
       }
    }
 }

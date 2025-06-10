@@ -20,7 +20,12 @@ public class Player : MonoBehaviour
   private float speedBullet = .1f;
   
   public Text armorText;
-  
+
+
+  public GameObject BulletPoofCloakItem;
+  public GameObject BulletproofCloakWrist;
+  public GameObject BulletproofCloakWrist2;
+  public GameObject MilitaryHelmetItem;
    private void Awake()
    {
       Instance = this;
@@ -30,7 +35,6 @@ public class Player : MonoBehaviour
    private void Update()
    {
       inputVector = GameInput.Instance.GetMovementVector();
-      Shot();
    }
 
    private void FixedUpdate()
@@ -48,15 +52,15 @@ public class Player : MonoBehaviour
    }
    public void Shot()
    {
-      if (Input.GetKeyDown(KeyCode.Mouse0))
-      {
+      //if (Input.GetKeyDown(KeyCode.Mouse0))
+     // {
          Vector2 mousePosition = Input.mousePosition;
          Vector2 worldPoint = Camera.main.ScreenToWorldPoint(new Vector2(mousePosition.x, mousePosition.y));
          GameObject Bull = Instantiate(bulletPrefab, bulletPoint.transform.position, Quaternion.identity);
          Vector3 direction = (worldPoint - rb.position).normalized;
          Bull.GetComponent<Rigidbody2D>().AddForce(direction * speedBullet);
       
-      }
+     // }
    }
    
    public bool IsRunning()
@@ -75,6 +79,7 @@ public class Player : MonoBehaviour
       if (collision.gameObject.CompareTag("Enemy"))
       {
          GetComponent<HPSystem>().TakeDamage(10);
+         GetComponent<HpBar>().TakeDamage(10);
       }
    }
 }
