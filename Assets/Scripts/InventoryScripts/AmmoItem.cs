@@ -5,12 +5,11 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "Ammo", menuName = "Inventory/Ammo")]
 public class AmmoItem : Item
 {
-   public static AmmoItem instance; 
-   
+   public static AmmoItem instance { get; set; } 
    public override void Use()
-   { 
-      Player.Instance.Shot();
-      maxStack -= 1;
-      Debug.Log(maxStack + " ammo used");
+   {
+         maxStack -= 1;
+         Player.Instance.Shot();
+         Debug.Log(maxStack + " ammo used");  
    }
 }

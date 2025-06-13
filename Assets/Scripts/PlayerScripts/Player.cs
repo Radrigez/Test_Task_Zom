@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
   public GameObject BulletproofCloakWrist;
   public GameObject BulletproofCloakWrist2;
   public GameObject MilitaryHelmetItem;
+  public GameObject ak_47;
+  public GameObject makarov;
    private void Awake()
    {
       Instance = this;
@@ -61,10 +63,6 @@ public class Player : MonoBehaviour
       }
    }
    
-   public bool IsRunning()
-   {
-      return isRuning;
-   }
 
    public Vector3 GetPlayerScreenPosition()
    {

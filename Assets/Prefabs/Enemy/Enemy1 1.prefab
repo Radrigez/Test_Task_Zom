@@ -425,7 +425,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d8b79c48f21b74c9c5f913fdbc69c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 5417455785447162058, guid: 3aaefbe7bd8487c41b02b313c89d1578, type: 3}
   speed: 0.5
 --- !u!114 &7481285280628964516
 MonoBehaviour:

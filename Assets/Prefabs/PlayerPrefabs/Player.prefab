@@ -1061,10 +1061,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5972087526906239289, guid: c044a6f98934a084a842e642694ab11d, type: 3}
   bulletPoint: {fileID: 5417455783676073083}
   armorText: {fileID: 0}
-  BulletPoofCloakItem: {fileID: 0}
-  BulletproofCloakWrist: {fileID: 0}
-  BulletproofCloakWrist2: {fileID: 0}
-  MilitaryHelmetItem: {fileID: 0}
+  BulletPoofCloakItem: {fileID: 4950192326806810306, guid: e152b6fa79967184d836ba4de5073fa4, type: 3}
+  BulletproofCloakWrist: {fileID: 6936838197544305348, guid: 728e76123a80a844c904be26a634c8c7, type: 3}
+  BulletproofCloakWrist2: {fileID: 6936838197544305348, guid: 728e76123a80a844c904be26a634c8c7, type: 3}
+  MilitaryHelmetItem: {fileID: 7389651714988646894, guid: fdedd5dc48f69f2428c4c4682ce7e5c6, type: 3}
 --- !u!114 &5417455785447162068
 MonoBehaviour:
   m_ObjectHideFlags: 0

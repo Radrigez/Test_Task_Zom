@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16bfcc39bb2ed6e429ea2278ac1c7e80, type: 3}
-  m_Name: AK-74
+  m_Script: {fileID: 11500000, guid: 0143b06948b18b643acf6ed45b899be7, type: 3}
+  m_Name: Ak_74
   m_EditorClassIdentifier: 
-  itemName: AK-74
+  itemName: Ak-74
   icon: {fileID: 21300000, guid: 6532bc2c52f179142a7333cc0f5faeda, type: 3}
-  maxStack: 1
+  maxStack: -11
   isConsinable: 1
+  AmmoText: {fileID: 0}
   damage: 10
+  ammo: {fileID: 11400000, guid: 6f53a846c8a212a42b12582e6216ea03, type: 2}

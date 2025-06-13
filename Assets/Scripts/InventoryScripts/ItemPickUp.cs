@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ItemPickUp : MonoBehaviour
 {
+   public static ItemPickUp instance{get; private set;}
    public Item item;
    public int amount = 1;
    void OnTriggerEnter2D(Collider2D other)

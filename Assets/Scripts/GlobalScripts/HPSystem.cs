@@ -6,7 +6,6 @@ public class HPSystem : MonoBehaviour
     public float maxHP = 100;
     public float currentHP;
     
-    private Vector2 takeDamage;
     void Start()
     {
         currentHP = maxHP;
